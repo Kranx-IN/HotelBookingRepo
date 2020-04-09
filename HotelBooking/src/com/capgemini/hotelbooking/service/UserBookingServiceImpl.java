@@ -1,4 +1,4 @@
-package com.capgemini.service;
+package com.capgemini.hotelbooking.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,9 +7,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import com.capgemini.model.User;
+import com.capgemini.hotelbooking.bean.User;
 
-public class UserBookingImpl implements UserBooking {
+public class UserBookingServiceImpl implements UserBookingService {
 
 	private static Map<String,Integer> hotelsList = new HashMap<String, Integer>();
 	private Map<String,Integer> bookedHotel = new HashMap<String, Integer>();
@@ -18,11 +18,11 @@ public class UserBookingImpl implements UserBooking {
 
 	private int userStatus = 1;
 	
-	public UserBookingImpl(int userStatus) {
+	public UserBookingServiceImpl(int userStatus) {
 		this.userStatus=userStatus;
 	}
 	
-	public UserBookingImpl(){
+	public UserBookingServiceImpl(){
 		
 	}
 	

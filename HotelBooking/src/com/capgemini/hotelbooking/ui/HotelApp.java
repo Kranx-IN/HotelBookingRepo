@@ -1,10 +1,10 @@
-package com.capgemini.ui;
+package com.capgemini.hotelbooking.ui;
 
 import java.util.Scanner;
 
-import com.capgemini.model.User;
-import com.capgemini.service.UserBookingImpl;
-import com.capgemini.service.UserVerifyImpl;
+import com.capgemini.hotelbooking.bean.User;
+import com.capgemini.hotelbooking.service.UserBookingServiceImpl;
+import com.capgemini.hotelbooking.service.UserVerifyServiceImpl;
 
 public class HotelApp {
 
@@ -13,7 +13,7 @@ public class HotelApp {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		boolean flag = true;
-		UserVerifyImpl service = new UserVerifyImpl();
+		UserVerifyServiceImpl service = new UserVerifyServiceImpl();
 		User user = null;
 		while(flag) {
 			System.out.println("\tWelcome to hotel booking app!\n");
@@ -36,7 +36,7 @@ public class HotelApp {
 						System.out.println("Successfully Logged in...\n");
 						boolean flag2 = true;
 						while(flag2) {
-							UserBookingImpl userBooking = new UserBookingImpl(verify);
+							UserBookingServiceImpl userBooking = new UserBookingServiceImpl(verify);
 							System.out.println("1.Book a new Hotel Room");
 							System.out.println("2.View My bookings");
 							System.out.println("3.Back");
@@ -65,7 +65,7 @@ public class HotelApp {
 						System.out.println("Welcome , admin");
 						boolean flag3 = true;
 						while(flag3) {
-							UserBookingImpl userBooking = new UserBookingImpl(verify);
+							UserBookingServiceImpl userBooking = new UserBookingServiceImpl(verify);
 							System.out.println("1. Add hotels");
 							System.out.println("2. View hotels");
 							System.out.println("3. Back");

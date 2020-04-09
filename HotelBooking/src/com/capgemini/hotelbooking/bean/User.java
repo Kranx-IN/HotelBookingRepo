@@ -1,4 +1,4 @@
-package com.capgemini.model;
+package com.capgemini.hotelbooking.bean;
 
 public class User {
 	private String userName;

@@ -1,10 +1,10 @@
-package com.capgemini.service;
+package com.capgemini.hotelbooking.service;
 
 import java.util.Map;
 
-import com.capgemini.model.User;
+import com.capgemini.hotelbooking.bean.User;
 
-public interface UserBooking {
+public interface UserBookingService {
 	
 	public String searchRooms(User user);
 	public boolean bookRooms(User user,String hotelName);
