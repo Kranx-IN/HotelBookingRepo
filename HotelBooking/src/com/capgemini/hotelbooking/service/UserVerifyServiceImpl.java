@@ -1,11 +1,11 @@
-package com.capgemini.service;
+package com.capgemini.hotelbooking.service;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.capgemini.model.User;
+import com.capgemini.hotelbooking.bean.User;
 
-public class UserVerifyImpl implements UserVerify {
+public class UserVerifyServiceImpl implements UserVerifyService {
 
 	private static Map<String, String> usersList = new HashMap<String, String>();
 	
