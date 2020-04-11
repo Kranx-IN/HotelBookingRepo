@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.capgemini.hotelbooking.bean.User;
 
-public class BookedRoomsDaoImpl implements BookedRoomsDao{
+public class BookedRoomsDaoImpl implements BookedRoomsDao{//sashank
 	
 	private Map<String,Integer> bookedRooms = new HashMap<String, Integer>();
 	private static Map<User,Map<String,Integer>> bookedHotels = new HashMap<User, Map<String,Integer>>();

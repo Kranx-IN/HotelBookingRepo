@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import com.capgemini.hotelbooking.bean.User;
 
-public class UserDaoImplTest {
+public class UserDaoImplTest {//Sashank
 
 	private User user;
 

@@ -6,7 +6,7 @@ import com.capgemini.hotelbooking.exception.NameNullException;
 import com.capgemini.hotelbooking.exception.PasswordLengthException;
 import com.capgemini.hotelbooking.exception.UserNameLengthException;
 
-public class UserVerifyServiceImpl implements UserVerifyService {
+public class UserVerifyServiceImpl implements UserVerifyService {//sashank
 
 	UserDaoImpl userDao = new UserDaoImpl();
 	

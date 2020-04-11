@@ -9,7 +9,7 @@ import com.capgemini.hotelbooking.dao.BookedRoomsDaoImpl;
 import com.capgemini.hotelbooking.dao.HotelsDaoImpl;
 import com.capgemini.hotelbooking.exception.HotelNotFoundException;
 
-public class BookingServiceImpl implements BookingService {
+public class BookingServiceImpl implements BookingService {//sashank
 	
 	BookedRoomsDaoImpl bookedRoomsDao = null;
 	HotelsDaoImpl hotelDao = null;

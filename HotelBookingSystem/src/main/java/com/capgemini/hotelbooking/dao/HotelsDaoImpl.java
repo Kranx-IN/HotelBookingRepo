@@ -7,7 +7,7 @@ import java.util.Map;
 
 import com.capgemini.hotelbooking.exception.HotelNotFoundException;
 
-public class HotelsDaoImpl implements HotelsDao{
+public class HotelsDaoImpl implements HotelsDao{//sashank
 
 	private static Map<String,Integer> hotelsList = new HashMap<String, Integer>();
 
