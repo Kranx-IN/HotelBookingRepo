@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.capgemini.hotelbooking.exception.HotelNotFoundException;
 
-public interface HotelsDao {
+public interface HotelsDao {//sashank
 
 	public List<String> viewHotels() throws HotelNotFoundException;
 	public int availableRooms(String hotel) throws HotelNotFoundException;

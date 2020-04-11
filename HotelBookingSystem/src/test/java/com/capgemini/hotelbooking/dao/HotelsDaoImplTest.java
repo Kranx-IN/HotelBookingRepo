@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import com.capgemini.hotelbooking.exception.HotelNotFoundException;
 
-public class HotelsDaoImplTest {
+public class HotelsDaoImplTest {//Sashank
 
 	HotelsDaoImpl target = null;
 	@Before
