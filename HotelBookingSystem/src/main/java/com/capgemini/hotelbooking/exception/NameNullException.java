@@ -1,6 +1,6 @@
 package com.capgemini.hotelbooking.exception;
 
-public class NameNullException extends Exception{//sashank
+public class NameNullException extends Exception{
 
 	private static final long serialVersionUID = 1L;
 
