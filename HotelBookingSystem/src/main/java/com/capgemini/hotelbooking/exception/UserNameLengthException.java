@@ -1,6 +1,6 @@
 package com.capgemini.hotelbooking.exception;
 
-public class UserNameLengthException extends Exception{//Siddharth
+public class UserNameLengthException extends Exception{
 
 	/**
 	 * 

@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 
 import com.capgemini.hotelbooking.bean.User;
 
-public class UserDaoImpl implements UserDao{//sashank
+public class UserDaoImpl implements UserDao{
 
 	//Local Database:
 	private static Map<String, String> customersList = new HashMap<String, String>();

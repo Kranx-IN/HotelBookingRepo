@@ -1,6 +1,6 @@
 package com.capgemini.hotelbooking.bean;
 
-public class User { //Sashank
+public class User {
 	protected String userName;
 	protected String password;
 	private String adminUserName = "admin";

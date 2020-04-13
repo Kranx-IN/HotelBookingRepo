@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.capgemini.hotelbooking.dao.HotelsDaoImpl;
 import com.capgemini.hotelbooking.exception.HotelNotFoundException;
 
-public class AdminServiceImpl implements AdminService{//sashank
+public class AdminServiceImpl implements AdminService{
 
 	private static Scanner sc = new Scanner(System.in);
 	HotelsDaoImpl hotelDao = new HotelsDaoImpl();

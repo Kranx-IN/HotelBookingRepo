@@ -13,7 +13,7 @@ import com.capgemini.hotelbooking.service.UserVerifyServiceImpl;
 
 public class HotelApp {
 
-	public static void main(String[] args) {//sashank
+	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\tWelcome to hotel booking app!\n");
