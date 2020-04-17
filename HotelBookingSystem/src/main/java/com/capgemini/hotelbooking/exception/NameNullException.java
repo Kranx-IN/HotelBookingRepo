@@ -6,7 +6,7 @@ public class NameNullException extends Exception{
 
 	@Override
 	public String getMessage() {
-		return "NameIsNull";
+		return "username can't be empty";
 	}
 	
 }

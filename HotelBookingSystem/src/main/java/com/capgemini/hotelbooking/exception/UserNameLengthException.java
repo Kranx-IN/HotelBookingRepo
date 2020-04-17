@@ -9,6 +9,6 @@ public class UserNameLengthException extends Exception{
 
 	@Override
 	public String getMessage() {
-		return "UsernameLengthIsViolated";
+		return "Username should be 4 or more characters";
 	}
 }
