@@ -6,7 +6,7 @@ public class HotelNotFoundException extends Exception{
 
 	@Override
 	public String getMessage() {
-		return "HotelNotFound";
+		return "Hotel not found";
 	}
 	
 	

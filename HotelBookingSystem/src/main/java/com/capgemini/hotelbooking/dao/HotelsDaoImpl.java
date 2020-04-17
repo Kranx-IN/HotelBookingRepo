@@ -63,5 +63,11 @@ public class HotelsDaoImpl implements HotelsDao{
 		}
 	}
 
+	@Override
+	public Map<String, Integer> userRooms() {
+	
+		return null;
+	}
+
 
 }

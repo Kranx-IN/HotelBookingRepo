@@ -11,7 +11,7 @@ public class AdminServiceImpl implements AdminService{
 	HotelsDaoImpl hotelDao = new HotelsDaoImpl();
 	
 	@Override
-	public boolean addHotels() 
+	public boolean addHotels()
 	{
 		System.out.println("Enter hotel name:");
 		String hotelName = sc.nextLine();
@@ -26,6 +26,12 @@ public class AdminServiceImpl implements AdminService{
 		for(String s : hotelDao.viewHotels()) {
 			System.out.println(s);
 		}
+		System.out.println("Select a hotel: \n");
+		int hotelId = sc.nextInt();
+		sc.nextLine();
+		String hotelName = hotelDao.viewHotels().get(hotelId);
+		
+		
 	}
 
 	

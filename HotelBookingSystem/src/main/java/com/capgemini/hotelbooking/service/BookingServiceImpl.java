@@ -8,6 +8,7 @@ import com.capgemini.hotelbooking.bean.User;
 import com.capgemini.hotelbooking.dao.BookedRoomsDaoImpl;
 import com.capgemini.hotelbooking.dao.HotelsDaoImpl;
 import com.capgemini.hotelbooking.exception.HotelNotFoundException;
+import com.capgemini.hotelbooking.exception.NoBookingException;
 
 public class BookingServiceImpl implements BookingService {
 	
@@ -70,7 +71,7 @@ public class BookingServiceImpl implements BookingService {
 	}
 
 	@Override
-	public Map<String, Integer> bookedRooms(User user) {	
+	public Map<String, Integer> bookedRooms(User user) throws NoBookingException {	
 		return bookedRoomsDao.userRooms(user);
 	}	
 

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.capgemini.hotelbooking.bean.User;
+import com.capgemini.hotelbooking.exception.NoBookingException;
 
 public class BookedRoomsDaoImpl implements BookedRoomsDao{
 	
@@ -36,7 +37,10 @@ public class BookedRoomsDaoImpl implements BookedRoomsDao{
 	}
 
 	@Override
-	public Map<String, Integer> userRooms(User user) {	
+	public Map<String, Integer> userRooms(User user) throws NoBookingException {	
+		if(bookedHotels.get(user).isEmpty()) {
+			throw new NoBookingException();
+		}
 		return bookedHotels.get(user);
 	}
 	

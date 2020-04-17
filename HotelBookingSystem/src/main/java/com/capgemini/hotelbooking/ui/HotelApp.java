@@ -1,10 +1,12 @@
 package com.capgemini.hotelbooking.ui;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.capgemini.hotelbooking.bean.User;
 import com.capgemini.hotelbooking.exception.HotelNotFoundException;
 import com.capgemini.hotelbooking.exception.NameNullException;
+import com.capgemini.hotelbooking.exception.NoBookingException;
 import com.capgemini.hotelbooking.exception.PasswordLengthException;
 import com.capgemini.hotelbooking.exception.UserNameLengthException;
 import com.capgemini.hotelbooking.service.AdminServiceImpl;
@@ -21,6 +23,7 @@ public class HotelApp {
 		UserVerifyServiceImpl verifyService = new UserVerifyServiceImpl();
 		User user = null;
 		while(flag) {
+			System.out.println("\tMain Menu: \n");
 			System.out.println("1.Login");
 			System.out.println("2.Register");
 			System.out.println("3.Exit");
@@ -28,7 +31,7 @@ public class HotelApp {
 			String choice = sc.nextLine();
 			switch(choice) {
 				case "1":
-					System.out.println("Logging as..\n 1.Customer\t 2. Employee");
+					System.out.println("Logging as..\n1.Customer\t 2. Employee\t 3.Admin");
 					System.out.print("Select an option: ");
 					int post = sc.nextInt();
 					sc.nextLine();
@@ -67,7 +70,11 @@ public class HotelApp {
 								}
 									break;
 								case "2":
+								try {
 									userBooking.bookedRooms(user);
+								} catch (NoBookingException | NullPointerException e) {
+									System.out.println(e.getMessage());
+								}
 									break;
 								case "3":
 									flag2 = false;
@@ -91,11 +98,15 @@ public class HotelApp {
 							String option2 = sc.nextLine();
 							switch(option2) {
 							case "1":
+								try {
 								if(adminService.addHotels()) {
 									System.out.println("Succesfully added a hotel!");
 								}
 								else {
 									System.out.println("Failed to add the hotel or It already exists");
+								}}
+								catch (NumberFormatException e) {
+									System.out.println("Invalid Number of rooms!");
 								}
 								break;
 							case "2":
@@ -125,20 +136,32 @@ public class HotelApp {
 					break;
 				case "2":
 					System.out.println("Proceeding with Registration...\n");
-					System.out.println("Enter a username:");
+
+					System.out.println("Enter a username:\n");
 					userName = sc.nextLine();
-					System.out.println("Enter a password:");
+					System.out.println("Enter a password:\n");
 					password = sc.nextLine();
 					System.out.println("Registering as..\n 1.Customer\t 2. Employee");
-					System.out.print("Select an option: ");
-					post = sc.nextInt();
-					sc.next();
-					if(post == 2) {
-						System.out.println("Enter hotel name:");
-						String hotelName = sc.nextLine();
-						user = new User(userName, password,post,hotelName);
+					System.out.print("Select an option: \n");
+					String strPost = sc.nextLine();
+					try {
+						post = Integer.parseInt(strPost);
+						if(post == 2) {
+							System.out.println("Enter hotel name:\n");
+							String hotelName = sc.nextLine();
+							user = new User(userName, password,post,hotelName);
+						}
+						else if(post ==1) 
+						{
+							user = new User(userName, password,post);
+						}
+						else {
+							System.out.println("Invalid option!");
+							break;
+						}
+					} catch (InputMismatchException e) {
+						System.out.println("Invalid input!");
 					}
-					user = new User(userName, password,post);
 				boolean register;
 				try {
 					register = verifyService.addUser(user);
@@ -148,10 +171,8 @@ public class HotelApp {
 					else {
 						System.out.println("User already exists\n");
 					}
-				} catch (PasswordLengthException e) {
-					System.out.println("Password should me more than 4 characters!");
-				} catch (UserNameLengthException e) {
-					System.out.println("Username should be more tham 4 characters");
+				} catch (PasswordLengthException | UserNameLengthException e) {
+					System.out.println(e.getMessage());
 				}
 					break;
 				case "3":
